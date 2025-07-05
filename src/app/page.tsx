@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Model from "../components/Model";
-import Model1 from "../components/Model1";
+import Model1 from "../components/AboutModel";
 import PageIcons from "@/components/PageIcons";
 import Waves from "@/components/Waves";
 

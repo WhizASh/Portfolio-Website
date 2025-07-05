@@ -7,11 +7,11 @@ export default function Model({open,onclose}:{open:boolean,onclose:()=>void}) {
 
   return (
     <>
-    {open && <div>
+    {open && <div className="z-50 fixed ">
       <Draggable nodeRef={nodeRef}>
         <div
           ref={nodeRef}
-          className={`fixed left-20 top-20 bg-amber-300 p-4 rounded-xl w-80 cursor-move`}
+          className={`fixed left-20 top-20 bg-amber-300 p-4 rounded-xl w-80 cursor-move border-4 border-amber-600`}
           >
           <div  className="flex justify-end mb-4">
             <div onClick={onclose} className="cursor-pointer hover:scale-120">[ X ]</div>
