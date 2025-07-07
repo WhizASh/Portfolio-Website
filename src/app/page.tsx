@@ -104,7 +104,7 @@ export default function App() {
       </div>
 
       {isVisible && 
-      <div className="w-screen bottom-29 fixed z-50 bg-blue-500 flex justify-around opacity-50 p-2">
+      <div className="w-screen bottom-0 fixed z-50 bg-blue-500 flex justify-around opacity-50 p-2">
         <div className="text-white ">
           <div className="font-bold">
             Hi There !
@@ -132,7 +132,7 @@ export default function App() {
               disableRotation={true}
           />
         </div>
-      <div className="w-screen h-52 bottom-30 fixed z-0">
+      <div className="w-screen h-52 bottom-0 fixed z-0">
         <Waves />
       </div>
         
