@@ -42,7 +42,7 @@ export default function PcModel({open,onclose}:{open:boolean,onclose:()=>void}) 
                 </div>
               </div>
               <div className="">
-                <div className="flex  p-4">
+                <div className="grid grid-cols-3 p-2">
                   <PageIcons img_url="galary.svg" title="Galary"  onclick={()=>setGalaryModel(true)}/>
                   <PageIcons img_url="trophy.svg" title="Achievments" onclick={()=>setAchievementModel(true)} />
                   <IconLinks img_url="/steam.svg" link="https://steamcommunity.com/profiles/76561199483692385/" title="Steam" />

@@ -24,7 +24,7 @@ export default function AchievmentModel({open,onclose}:{open:boolean,onclose:()=
       >
         <div
               ref={nodeRef}
-              className="w-full h-full bg-gray-300 rounded-xl border-4 border-gray-600 overflow-y-auto"
+              className="w-full h-full bg-gray-300 rounded-xl border-4 border-gray-600 "
               >
             <div className="">
               <div className="flex rounded-t-md bg-gray-600 p-2">
@@ -38,7 +38,7 @@ export default function AchievmentModel({open,onclose}:{open:boolean,onclose:()=
                 </div>
               </div>
             </div>
-              <div className=" p-4 grid grid-cols-2  md:grid-cols-3">
+              <div className=" p-4 grid grid-cols-2 overflow-y-scroll md:grid-cols-3 ">
                 <ImageBox img_url="img/techtonic.jpeg" desc="Won 1st Price in Freky Cpp in College"/>             
                 <ImageBox img_url="img/hackthon.jpeg" desc="Won 1st Price at college level hackathon"/>                
                 <ImageBox img_url="img/shield.jpeg" desc="Won 2nd Price in Coding Competition during Diploma"/>                

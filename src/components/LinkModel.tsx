@@ -24,7 +24,7 @@ export default function LinkModel({open,onclose}:{open:boolean,onclose:()=>void}
           >
             <div
               ref={nodeRef}
-              className=" bg-lime-100 rounded-xl w-full h-full cursor-move border-4 border-lime-500"
+              className=" bg-lime-100 rounded-xl w-full h-full border-4 border-lime-500"
               >
               <div className="flex rounded-t-md bg-lime-500 p-2">
                 <div className=" flex justify-center">
@@ -37,7 +37,7 @@ export default function LinkModel({open,onclose}:{open:boolean,onclose:()=>void}
                 </div>
               </div>
               
-              <div className="h-full">
+              <div className="">
                 <div className="grid grid-cols-3 p-2">
                   <IconLinks img_url="/linkedin.svg" link="https://www.linkedin.com/in/yash-mahajan-135757326/" title="Linkedin" />
                   <IconLinks img_url="/instagram.svg" link="https://www.instagram.com/y_ash170?igsh=MWF6M29yMjk2NHVzNw==" title="Instagram" />
