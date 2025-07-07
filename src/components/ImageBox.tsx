@@ -1,6 +1,6 @@
 export default function ImageBox({img_url,desc}:{img_url:string,desc:string}){
-    return <div className="m-2 border-2 rounded-md">
-        <img src={img_url} alt="img" />
-        <div className="ml-1">{desc}</div>
+    return <div className="m-2 border rounded-md">
+        <img className="rounded-md w-full" src={img_url} alt="img" />
+        <div className="text-gray-700 ml-1 font-extralight">{desc}</div>
     </div>
 }

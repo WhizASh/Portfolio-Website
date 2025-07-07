@@ -1,7 +1,9 @@
 .slide-pane__content {
-    padding: 0px;
+    padding: 0px !important;
 }
 
 .slide-pane{
     border-radius: 12px;
+    z-index: 50;
+    position: absolute;
 }

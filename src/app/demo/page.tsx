@@ -13,7 +13,9 @@ export default function App() {
         Click me to open right pane!
       </button>
 
-      <PageIcons title="About" img_url={"/about.svg"} onclick={()=>setAboutModel(true)} isMobile={true}/>
+        <div className="z-10">
+            <PageIcons title="About" img_url={"/about.svg"} onclick={()=>setAboutModel(true)} isMobile={true}/>
+        </div>
 
 
     <div className="block md:hidden">

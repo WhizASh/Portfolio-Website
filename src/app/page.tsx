@@ -1,58 +1,132 @@
 "use client"
 
 import { useState } from "react";
-import Model from "../components/Model";
-import Model1 from "../components/AboutModel";
+import LinkModel from "@/components/LinkModel";
+import PcModel from "@/components/PcModel";
+import ProjectModel from "@/components/ProjectModel";
+import ContactModel from "@/components/ContactModel";
 import PageIcons from "@/components/PageIcons";
 import Waves from "@/components/Waves";
+import AboutModel from "@/components/AboutModel";
+import Particles from "@/components/background";
+import "react-sliding-pane/dist/react-sliding-pane.css";
+
 
 export default function App() {
 
-  const [model,setModel] = useState(false);
-  const [model1,setModel1] = useState(false);
+
+  const [aboutModel,setAboutModel] = useState(false);
+  const [linkModel,setLinkModel] = useState(false);
+  const [pcModel,setPcModel] = useState(false);
+  const [projectModel,setProjectModel] = useState(false);
+  const [contactModel,setContactModel] = useState(false);
+  
+  const [isVisible,setVisible] = useState(true);
+
 
   return (
     <>
-    <div>
-      <div className=" bg-black  flex justify-center w-screen h-screen items-center">
-        <div className="border-4 text-white rounded-xl w-3xl h-3/5 mb-12">
-          {/* <div className=" flex justify-around items-center border-b-4 h-14">
-              <div className="text-md">home</div>
-          </div> */}
-          <div className="">
-            <div className="text-center text-4xl p-10 mb-20">
-                <h1>Hi , I am Yash</h1>
+    <div className="hidden md:block">
+      
+      <div className=" bg-white  flex justify-center w-screen h-screen items-center flex-col ">
+        <div className="text-center text-amber-500 p-10 mb-8">
+                <h1 className="font-bold text-4xl">Hi! ,I am Yash</h1>
+                <h3 className="text-xl">This is my Desktop!</h3>
+        </div>
+        <div className="flex flex-col justify-around border-4 text-black rounded-xl w-3xl h-3/5 mb-12 z-1 bg-gray-50">
+          <div className="h-full">
+            <div className="flex h-full justify-center items-end flex-wrap">
+              <PageIcons title="About" img_url={"/about.svg"} onclick={()=>setAboutModel(true)}/>
+              <PageIcons title="Links" img_url={"/links.svg"} onclick={()=>setLinkModel(true)}/>
+              <PageIcons title="Projects" img_url={"/folder.svg"} onclick={()=>setProjectModel(true)}/>
+              <PageIcons title="Contact" img_url={"/contact.svg"} onclick={()=>setContactModel(true)}/>
+              <PageIcons title="My PC" img_url={"/pc.svg"} onclick={()=>setPcModel(true)}/>
             </div>
-            <div className="flex justify-center">
-              <PageIcons title="Links" img_url={"/icon_links.jpg"} onclick={()=>setModel(true)}/>
-              <PageIcons title="About" img_url={"/icon_links.jpg"} onclick={()=>setModel(true)}/>
-              <PageIcons title="About" img_url={"/icon_links.jpg"} onclick={()=>setModel(true)}/>
-              <PageIcons title="About" img_url={"/icon_links.jpg"} onclick={()=>setModel(true)}/>
-              
+          </div>  
+          <div className="mt-auto flex justify-left items-center border-t-4 h-10 bg-gray-600 rounded-b-md">
+            <div className="flex ml-8">
+                <div className="pl-2">🔴</div>
+                <div className="pl-2">◼️</div>
             </div>
-          </div>
-          <div className="mt-20 flex justify-around items-center border-t-4 h-14">
-            <div className="text-md">home</div>
-          </div>
-          <div className="text-center">
-            //monitor stand here
+            <div className="flex justify-center w-full">
+                <div className="mr-20 text-md font-extralight">
+                    Legion
+                </div>
+            </div>  
           </div>
         </div>
+          <div className="text-center">
+                <div className=""></div>
+          </div>
       </div>
-      <Model open={model} onclose={()=>setModel(false)}/>
+      <div className="z-10">
+      <LinkModel open={linkModel} onclose={()=>setLinkModel(false)}/>
+      <ProjectModel open={projectModel} onclose={()=>setProjectModel(false)}/>
+      <PcModel open={pcModel} onclose={()=>setPcModel(false)}/>
+      <AboutModel open={aboutModel} onclose={()=>setAboutModel(false)}/>
+      <ContactModel open={contactModel} onclose={()=>setContactModel(false)}/>
       </div>
-      <div className=" w-full h-52 bottom-0 fixed">
+    </div>
+    <div className="block md:hidden">
+      <div className=" bg-white  flex justify-center w-screen h-screen items-center flex-col ">
+        <div className="text-center text-amber-500 p-10">
+                <h1 className="font-bold text-4xl">Hi! ,I am Yash</h1>
+                <h3 className="text-xl">Pune Based Full Stack Developer | Tech Enthusiast | Guitarist</h3>
+        </div>
+        <div className="flex flex-col justify-around text-black rounded-xl w-4/5 h-3/5 mb-24 z-10">
+          <div className="h-full p-4">
+            <div className="flex h-full justify-center items-end flex-wrap">
+              <PageIcons title="About" img_url={"/about.svg"} onclick={()=>setAboutModel(true)} isMobile={true}/>
+              <PageIcons title="Links" img_url={"/links.svg"} onclick={()=>setLinkModel(true)} isMobile={true}/>
+              <PageIcons title="Projects" img_url={"/folder.svg"} onclick={()=>setProjectModel(true)} isMobile={true}/>
+              <PageIcons title="Contact" img_url={"/contact.svg"} onclick={()=>setContactModel(true)} isMobile={true}/>
+              <PageIcons title="My PC" img_url={"/pc.svg"} onclick={()=>setPcModel(true)} isMobile={true}/>
+            </div>
+          </div>  
+        </div>
+      </div>
+      <div className="z-10">
+      <LinkModel open={linkModel} onclose={()=>setLinkModel(false)} />
+      <ProjectModel open={projectModel} onclose={()=>setProjectModel(false)}/>
+      <PcModel open={pcModel} onclose={()=>setPcModel(false)}/>
+      <AboutModel open={aboutModel} onclose={()=>setAboutModel(false)}/>
+      <ContactModel open={contactModel} onclose={()=>setContactModel(false)}/>
+      </div>
+
+      {isVisible && 
+      <div className="w-full bottom-0 fixed h-16 z-50 bg-blue-500 flex justify-around opacity-50 p-2">
+        <div className="text-white ">
+          <div className="font-bold">
+            Hi There !
+          </div>
+          <div className="">
+             This site is best experienced on a desktop ! 
+          </div>
+        </div>
+          <div className="flex items-center justify-center">
+            <div className=" rounded  pl-2 pr-2 pt-1 pb-1 m-1  text-white mt-3 font-semibold bg-blue-800">
+              <button onClick={()=>setVisible(false)}>okay</button>
+            </div>
+          </div>
+      </div>}
+    </div>
+      <div className="absolute inset-0 z-0">
+          <Particles
+              particleColors={['#ffffff', '#ffffff']}
+              particleCount={200}
+              particleSpread={10}
+              speed={0.1}
+              particleBaseSize={100}
+              moveParticlesOnHover={false}
+              alphaParticles={false}
+              disableRotation={true}
+          />
+        </div>
+      <div className="w-full h-52 bottom-0 fixed z-0">
         <Waves />
       </div>
+        
+      
     </>
   );
 }
-
-
-
-{/* <button className="cursor-pointer" onClick={()=>setModel(true)}>Open Model</button>
-      <br />
-      <button className="cursor-pointer" onClick={()=>setModel1(true)}>Open Model1</button>
-      <Model1 open={model1} onclose={()=>setModel1(false)}/>
-      <Model open={model} onclose={()=>setModel(false)}/>
-      <br /> */}
