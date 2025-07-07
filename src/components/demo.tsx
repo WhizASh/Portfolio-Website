@@ -4,7 +4,7 @@ import Draggable from "react-draggable";
 import SlidingPane from 'react-sliding-pane'
 import '../styles/main.css'
 
-export default function Demo({open,onclose,isMobile}:{open:boolean,onclose:()=>void,isMobile?:boolean}) {
+export default function Demo({open,onclose}:{open:boolean,onclose:()=>void}) {
   const nodeRef = useRef<HTMLDivElement>(null);
   
   return (
